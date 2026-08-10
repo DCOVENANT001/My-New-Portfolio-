@@ -1,0 +1,105 @@
+"use client";
+
+import { useEffect } from "react";
+import Image from "next/image";
+
+export type LightboxShot = { src: string; caption: string };
+
+export default function Lightbox({
+  shots,
+  index,
+  onClose,
+  onIndexChange,
+  loop = false,
+}: {
+  shots: LightboxShot[];
+  index: number;
+  onClose: () => void;
+  onIndexChange: (index: number) => void;
+  loop?: boolean;
+}) {
+  const canPrev = loop || index > 0;
+  const canNext = loop || index < shots.length - 1;
+
+  const goPrev = () => {
+    if (!canPrev) return;
+    onIndexChange(loop ? (index - 1 + shots.length) % shots.length : index - 1);
+  };
+
+  const goNext = () => {
+    if (!canNext) return;
+    onIndexChange(loop ? (index + 1) % shots.length : index + 1);
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index, shots.length, loop]);
+
+  const shot = shots[index];
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-navy/95 p-6"
+      onClick={onClose}
+    >
+      <button
+        aria-label="Close"
+        onClick={onClose}
+        className="absolute right-6 top-6 font-mono text-sm text-white/70 hover:text-white"
+      >
+        CLOSE ✕
+      </button>
+
+      <button
+        aria-label="Previous"
+        disabled={!canPrev}
+        onClick={(e) => {
+          e.stopPropagation();
+          goPrev();
+        }}
+        className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 disabled:opacity-20 disabled:hover:bg-white/10 sm:left-8"
+      >
+        ←
+      </button>
+      <button
+        aria-label="Next"
+        disabled={!canNext}
+        onClick={(e) => {
+          e.stopPropagation();
+          goNext();
+        }}
+        className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 disabled:opacity-20 disabled:hover:bg-white/10 sm:right-8"
+      >
+        →
+      </button>
+
+      <div
+        className="relative max-h-[75vh] w-full max-w-4xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+          <Image
+            src={shot.src}
+            alt={shot.caption}
+            fill
+            sizes="90vw"
+            className="object-contain"
+          />
+        </div>
+      </div>
+      <p className="mt-4 max-w-2xl text-center text-sm text-white/80">
+        {shot.caption}
+      </p>
+      <p className="mt-1 font-mono text-xs text-white/40">
+        {index + 1} / {shots.length}
+      </p>
+    </div>
+  );
+}

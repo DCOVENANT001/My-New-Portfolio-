@@ -1,0 +1,36 @@
+# Covenant Ademola
+
+> AI Engineer & Automation Specialist. Builds AI agents, CRM automations, and
+> full websites for real businesses, then coaches other professionals to do
+> the same.
+
+Covenant Ademola (also written Ademola Covenant) is an AI automation and
+systems specialist based in Nigeria, working remotely with clients across
+Canada, Ireland, and the UK.
+
+## Summary
+
+- Built the entire technology stack for Tempho Luxe, a Canadian real estate
+  company: their website, a 24/7 AI voice agent, a conversational AI agent
+  across social and SMS channels, and the CRM/automation system managing
+  1,820+ landlord and tenant opportunities.
+- Built a lead-generation and outreach system for a UK real estate firm that
+  replaced the manual work of seven people.
+- Architected the entire operations and CRM system from zero for Vistahand
+  (Ireland).
+- Built the website, lead-nurture automation, and e-commerce automation for
+  AI with Ann (aiwithann.uk), a UK digital marketer and educator.
+- Automated legal document management for a Canadian law practice.
+- Coaches 300+ professionals — including lawyers, cybersecurity experts, HR
+  managers, and data analysts — at AI Focused Academy on how to build AI
+  automations themselves.
+- Works primarily with n8n, Zapier, Make, GoHighLevel, Apify, and LLM APIs
+  (OpenAI, Anthropic Claude, Google Gemini), and builds full-stack products
+  using AI-assisted development tools such as Claude Code.
+
+## Contact
+
+- Email: covenantademola17@gmail.com
+- LinkedIn: https://www.linkedin.com/in/covenant-ademola-2359a42a5/
+- X: https://x.com/covenant__ai
+- Instagram: https://instagram.com/covenant__ai
