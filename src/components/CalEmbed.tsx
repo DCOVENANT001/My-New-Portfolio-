@@ -22,7 +22,7 @@ export default function CalEmbed() {
       const d = C.document;
       C.Cal =
         C.Cal ||
-        function (...args: unknown[]) {
+        (function (...args: unknown[]) {
           const cal = C.Cal!;
           const ar = args;
           if (!cal.loaded) {
@@ -47,7 +47,7 @@ export default function CalEmbed() {
             return;
           }
           p(cal as unknown as { q: unknown[] }, ar);
-        };
+        } as unknown as Window["Cal"]);
     })(window, "https://app.cal.com/embed/embed.js", "init");
 
     window.Cal!("init", "30min", { origin: "https://app.cal.com" });
