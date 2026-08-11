@@ -51,7 +51,7 @@ export default function Hero() {
         </div>
 
         <div
-          className="reveal in-view relative flex-1 lg:max-w-sm"
+          className="reveal in-view relative w-full max-w-xs flex-1 lg:max-w-sm"
           style={{ animationDelay: "320ms" }}
         >
           <FloatingBadge label="n8n" className="-left-4 top-6 lg:-left-6" delay={0} />
