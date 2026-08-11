@@ -68,7 +68,7 @@ export default function Lightbox({
       <button
         aria-label="Close"
         onClick={onClose}
-        className="absolute right-4 top-4 rounded-full px-4 py-3 font-mono text-sm text-white/70 hover:text-white"
+        className="absolute right-4 top-4 z-10 rounded-full bg-navy/60 px-4 py-3 font-mono text-sm text-white/70 hover:text-white"
       >
         CLOSE ✕
       </button>
@@ -80,7 +80,7 @@ export default function Lightbox({
           e.stopPropagation();
           goPrev();
         }}
-        className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 disabled:opacity-20 disabled:hover:bg-white/10 sm:left-8"
+        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white hover:bg-white/30 disabled:opacity-20 disabled:hover:bg-white/20 sm:left-8"
       >
         ←
       </button>
@@ -91,7 +91,7 @@ export default function Lightbox({
           e.stopPropagation();
           goNext();
         }}
-        className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 disabled:opacity-20 disabled:hover:bg-white/10 sm:right-8"
+        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/20 p-3 text-white hover:bg-white/30 disabled:opacity-20 disabled:hover:bg-white/20 sm:right-8"
       >
         →
       </button>
