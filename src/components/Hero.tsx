@@ -21,7 +21,7 @@ export default function Hero() {
             AI ENGINEER &amp; AUTOMATION SPECIALIST
           </p>
           <h1
-            className="reveal in-view mt-5 font-serif text-6xl font-bold leading-[0.95] text-navy sm:text-7xl"
+            className="reveal in-view mt-5 font-serif text-4xl font-bold leading-[1.05] text-navy sm:text-6xl sm:leading-[0.95] lg:text-7xl"
             style={{ animationDelay: "80ms" }}
           >
             Systems that

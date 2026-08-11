@@ -35,9 +35,10 @@ export default function WaveBackdrop() {
   return (
     <svg
       viewBox="0 0 800 500"
+      preserveAspectRatio="none"
       fill="none"
       aria-hidden
-      className="pointer-events-none absolute inset-0 h-full w-full"
+      className="pointer-events-none absolute inset-0 h-full w-full opacity-60 sm:opacity-100"
     >
       {lines.map(([x1, y1, x2, y2], i) => (
         <line
@@ -48,7 +49,7 @@ export default function WaveBackdrop() {
           y2={y2}
           stroke="var(--navy)"
           strokeWidth="1"
-          opacity="0.12"
+          opacity="0.09"
         />
       ))}
 
@@ -59,7 +60,7 @@ export default function WaveBackdrop() {
           cy={y}
           r={i % 3 === 0 ? 3 : 2}
           fill={i % 4 === 0 ? "var(--accent)" : "var(--navy)"}
-          opacity="0.25"
+          opacity="0.18"
         />
       ))}
 
