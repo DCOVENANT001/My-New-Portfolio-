@@ -32,12 +32,13 @@ export default function Nav() {
       }`}
     >
       <nav
-        className={`mx-auto flex max-w-6xl items-center justify-between px-6 transition-[padding] duration-300 ${
+        className={`mx-auto flex max-w-6xl items-center justify-between px-4 transition-[padding] duration-300 sm:px-6 ${
           scrolled ? "py-2.5" : "py-4"
         }`}
       >
         <a href="#top" className="font-serif text-lg font-semibold text-navy">
-          Covenant Ademola
+          <span className="sm:hidden">CA</span>
+          <span className="hidden sm:inline">Covenant Ademola</span>
         </a>
         <ul className="hidden gap-8 font-mono text-sm text-muted sm:flex">
           {links.map((link) => (
@@ -49,7 +50,7 @@ export default function Nav() {
           ))}
         </ul>
         <div className="flex items-center gap-2">
-          <BookCallButton className="btn-glow rounded-full bg-navy px-4 py-2 font-mono text-xs font-medium text-white">
+          <BookCallButton className="btn-glow hidden rounded-full bg-navy px-4 py-2 font-mono text-xs font-medium text-white sm:inline-block">
             Book a call
           </BookCallButton>
           <button
@@ -73,19 +74,24 @@ export default function Nav() {
       </nav>
 
       {menuOpen && (
-        <ul className="flex flex-col border-t border-border bg-background px-6 py-2 font-mono text-sm sm:hidden">
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="block py-3 text-navy"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="border-t border-border bg-background px-4 py-2 sm:hidden">
+          <ul className="flex flex-col font-mono text-sm">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-3 text-navy"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <BookCallButton className="btn-glow mb-3 mt-1 block w-full rounded-full bg-navy px-4 py-2.5 text-center font-mono text-xs font-medium text-white">
+            Book a call
+          </BookCallButton>
+        </div>
       )}
     </header>
   );
