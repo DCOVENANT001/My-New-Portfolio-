@@ -68,6 +68,16 @@ export default function Hero() {
               className="object-cover"
             />
           </div>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:hidden">
+            {["n8n", "ZAP", "GHL", "AI"].map((label) => (
+              <span
+                key={label}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-navy/10 bg-white font-mono text-[10px] font-semibold tracking-tight text-navy shadow-sm"
+              >
+                {label}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
