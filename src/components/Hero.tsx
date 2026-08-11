@@ -1,7 +1,6 @@
 import Image from "next/image";
 import WaveBackdrop from "./WaveBackdrop";
 import GradientBlobs from "./GradientBlobs";
-import FloatingBadge from "./FloatingBadge";
 import BookCallButton from "./BookCallButton";
 
 export default function Hero() {
@@ -54,10 +53,6 @@ export default function Hero() {
           className="reveal in-view relative w-full max-w-xs flex-1 lg:max-w-sm"
           style={{ animationDelay: "320ms" }}
         >
-          <FloatingBadge label="n8n" className="-left-4 top-6 lg:-left-6" delay={0} />
-          <FloatingBadge label="ZAP" className="-right-2 top-16" delay={0.4} />
-          <FloatingBadge label="GHL" className="-left-2 bottom-20" delay={0.8} />
-          <FloatingBadge label="AI" className="-right-4 bottom-8 lg:-right-6" delay={1.2} />
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border">
             <Image
               src="/images/portrait.jpg"
@@ -68,7 +63,7 @@ export default function Hero() {
               className="object-cover"
             />
           </div>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:hidden">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
             {["n8n", "ZAP", "GHL", "AI"].map((label) => (
               <span
                 key={label}
