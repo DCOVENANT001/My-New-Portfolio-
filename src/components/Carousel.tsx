@@ -36,16 +36,20 @@ export default function Carousel({
       <p className="mt-2 text-center text-sm text-muted">
         {images[index].caption}
       </p>
-      <div className="mt-2 flex justify-center gap-1.5">
+      <div className="mt-1 flex justify-center">
         {images.map((img, i) => (
           <button
             key={img.src}
             aria-label={`Show image ${i + 1}`}
             onClick={() => setIndex(i)}
-            className={`h-1.5 rounded-full transition-all ${
-              i === index ? "w-5 bg-accent" : "w-1.5 bg-navy/20"
-            }`}
-          />
+            className="flex h-8 w-8 items-center justify-center"
+          >
+            <span
+              className={`block h-1.5 rounded-full transition-all ${
+                i === index ? "w-5 bg-accent" : "w-1.5 bg-navy/20"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

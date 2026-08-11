@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 export type LightboxShot = { src: string; caption: string };
@@ -20,6 +20,7 @@ export default function Lightbox({
 }) {
   const canPrev = loop || index > 0;
   const canNext = loop || index < shots.length - 1;
+  const touchStartX = useRef<number | null>(null);
 
   const goPrev = () => {
     if (!canPrev) return;
@@ -44,15 +45,30 @@ export default function Lightbox({
 
   const shot = shots[index];
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(delta) < 40) return;
+    if (delta > 0) goPrev();
+    else goNext();
+  };
+
   return (
     <div
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-navy/95 p-6"
       onClick={onClose}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       <button
         aria-label="Close"
         onClick={onClose}
-        className="absolute right-6 top-6 font-mono text-sm text-white/70 hover:text-white"
+        className="absolute right-4 top-4 rounded-full px-4 py-3 font-mono text-sm text-white/70 hover:text-white"
       >
         CLOSE ✕
       </button>

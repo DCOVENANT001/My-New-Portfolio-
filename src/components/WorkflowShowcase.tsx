@@ -9,6 +9,7 @@ import { workflowsByPlatform } from "@/data/workflowProof";
 export default function WorkflowShowcase() {
   const [active, setActive] = useState(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [paused, setPaused] = useState(false);
   const current = workflowsByPlatform[active];
   const track = [...current.shots, ...current.shots];
 
@@ -48,26 +49,36 @@ export default function WorkflowShowcase() {
           ))}
         </Reveal>
 
-        <Reveal delay={150} className="marquee-fade marquee-pausable mt-10 overflow-hidden">
-          <div className="marquee-track flex w-max gap-6">
-            {track.map((shot, i) => (
-              <button
-                key={`${shot.src}-${i}`}
-                onClick={() => setLightbox(i % current.shots.length)}
-                className="card-hover w-72 shrink-0 rounded-lg border border-border bg-background text-left"
-              >
-                <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
-                  <Image
-                    src={shot.src}
-                    alt={shot.caption}
-                    fill
-                    sizes="288px"
-                    className="object-cover object-top"
-                  />
-                </div>
-                <p className="px-3 py-2 text-xs text-muted">{shot.caption}</p>
-              </button>
-            ))}
+        <Reveal delay={150} className="mt-10">
+          <div
+            className="marquee-fade marquee-pausable overflow-hidden"
+            onTouchStart={() => setPaused(true)}
+            onTouchEnd={() => setPaused(false)}
+            onTouchCancel={() => setPaused(false)}
+          >
+            <div
+              className="marquee-track flex w-max gap-6"
+              style={paused ? { animationPlayState: "paused" } : undefined}
+            >
+              {track.map((shot, i) => (
+                <button
+                  key={`${shot.src}-${i}`}
+                  onClick={() => setLightbox(i % current.shots.length)}
+                  className="card-hover w-72 shrink-0 rounded-lg border border-border bg-background text-left"
+                >
+                  <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
+                    <Image
+                      src={shot.src}
+                      alt={shot.caption}
+                      fill
+                      sizes="288px"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <p className="px-3 py-2 text-xs text-muted">{shot.caption}</p>
+                </button>
+              ))}
+            </div>
           </div>
         </Reveal>
       </div>
