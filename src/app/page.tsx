@@ -8,6 +8,7 @@ import Skills from "@/components/Skills";
 import TechnicalStack from "@/components/TechnicalStack";
 import BragLine from "@/components/BragLine";
 import FlagshipTempho from "@/components/FlagshipTempho";
+import FlagshipAgency from "@/components/FlagshipAgency";
 import FlagshipSeven from "@/components/FlagshipSeven";
 import WorkflowShowcase from "@/components/WorkflowShowcase";
 import ProofGrid from "@/components/ProofGrid";
@@ -36,6 +37,7 @@ export default async function Home() {
         <TechnicalStack />
         <BragLine />
         <FlagshipTempho />
+        <FlagshipAgency />
         <FlagshipSeven />
         <WorkflowShowcase />
         <ProofGrid />

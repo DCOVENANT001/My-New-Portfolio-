@@ -13,6 +13,7 @@ const iconMap: Record<string, keyof typeof simpleIcons> = {
   x: "siX",
   instagram: "siInstagram",
   whatsapp: "siWhatsapp",
+  gmail: "siGmail",
 };
 
 const customIcons: Record<string, { path: string; hex: string }> = {

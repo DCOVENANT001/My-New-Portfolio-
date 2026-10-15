@@ -15,6 +15,7 @@ export const loomVideoIds = [
   "9a49064c7e2a4da8895a62540ffad69a", // Lead nurture sequence explained
   "6d20f218258e48e7ac994730098ac7bc", // AI with Ann
   "ed99355e712945119fdfb733d0a2b8d8", // Sales rep dashboard
+  "7d48cb2a90da490ab7cd3a58f1743720", // AI lead generation and website audit system
 ] as const;
 
 export type LoomThumbnails = Record<string, string>;
