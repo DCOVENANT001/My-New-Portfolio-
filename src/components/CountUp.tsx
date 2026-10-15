@@ -11,7 +11,9 @@ export default function CountUp({
 }) {
   const match = value.match(/^(\D*)([\d,]+)(\D*)$/);
   const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState(match ? match[1] + "0" + match[3] : value);
+  // Render the real value in the server HTML so crawlers and screen readers
+  // see it; the count-up from 0 only starts once the stat scrolls into view.
+  const [display, setDisplay] = useState(value);
   const animating = useRef(false);
   const frame = useRef<number | null>(null);
 
