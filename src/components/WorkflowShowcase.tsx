@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Reveal from "./Reveal";
 import Lightbox from "./Lightbox";
@@ -13,13 +13,9 @@ export default function WorkflowShowcase() {
   const current = workflowsByPlatform[active];
   const track = [...current.shots, ...current.shots];
 
-  useEffect(() => {
-    setLightbox(null);
-  }, [active]);
-
   return (
     <section className="border-y border-border bg-surface">
-      <div className="mx-auto max-w-6xl px-6 py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
         <Reveal className="text-center">
           <p className="font-mono text-sm font-semibold tracking-widest text-accent">
             SEE THE WORKFLOWS
@@ -37,7 +33,10 @@ export default function WorkflowShowcase() {
           {workflowsByPlatform.map((group, i) => (
             <button
               key={group.platform}
-              onClick={() => setActive(i)}
+              onClick={() => {
+                setActive(i);
+                setLightbox(null);
+              }}
               className={`rounded-full px-5 py-2.5 font-mono text-sm font-semibold transition-colors ${
                 i === active
                   ? "bg-navy text-white"
@@ -50,21 +49,24 @@ export default function WorkflowShowcase() {
         </Reveal>
 
         <Reveal delay={150} className="mt-10">
+          {/* Phones: a native swipe row with snap points. sm and up: the auto-scrolling marquee. */}
           <div
-            className="marquee-fade marquee-pausable overflow-hidden"
+            className="no-scrollbar marquee-pausable -mx-6 snap-x snap-mandatory overflow-x-auto px-6 sm:mx-0 sm:marquee-fade sm:snap-none sm:overflow-hidden sm:px-0"
             onTouchStart={() => setPaused(true)}
             onTouchEnd={() => setPaused(false)}
             onTouchCancel={() => setPaused(false)}
           >
             <div
-              className="marquee-track flex w-max gap-6"
+              className="flex w-max gap-4 sm:marquee-track sm:gap-6"
               style={paused ? { animationPlayState: "paused" } : undefined}
             >
               {track.map((shot, i) => (
                 <button
                   key={`${shot.src}-${i}`}
                   onClick={() => setLightbox(i % current.shots.length)}
-                  className="card-hover w-72 shrink-0 rounded-lg border border-border bg-background text-left"
+                  className={`card-hover w-72 shrink-0 snap-start rounded-lg border border-border bg-background text-left ${
+                    i >= current.shots.length ? "hidden sm:block" : ""
+                  }`}
                 >
                   <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
                     <Image

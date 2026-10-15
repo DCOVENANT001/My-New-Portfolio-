@@ -16,6 +16,7 @@ import Testimonials from "@/components/Testimonials";
 import ClosingCta from "@/components/ClosingCta";
 import Contact from "@/components/Contact";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Footer from "@/components/Footer";
 import { LoomThumbnailsProvider } from "@/components/LoomThumbnails";
 import { getLoomThumbnails } from "@/lib/loom";
 
@@ -43,6 +44,7 @@ export default async function Home() {
         <ClosingCta />
         <Contact />
       </main>
+      <Footer />
       <WhatsAppFloat />
     </LoomThumbnailsProvider>
   );

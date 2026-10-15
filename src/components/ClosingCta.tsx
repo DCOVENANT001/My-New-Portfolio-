@@ -6,7 +6,7 @@ export default function ClosingCta() {
   return (
     <section className="relative overflow-hidden border-y border-border bg-navy">
       <GradientBlobs />
-      <Reveal className="relative mx-auto max-w-3xl px-6 py-24 text-center">
+      <Reveal className="relative mx-auto max-w-3xl px-6 py-16 sm:py-24 text-center">
         <h2 className="font-serif text-4xl font-bold text-white sm:text-6xl">
           Stop being the bottleneck.
         </h2>

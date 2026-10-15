@@ -37,7 +37,7 @@ const items = [
 
 export default function Skills() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
       <Reveal className="text-center">
         <p className="font-mono text-sm font-semibold tracking-widest text-accent">
           WHAT I BUILD

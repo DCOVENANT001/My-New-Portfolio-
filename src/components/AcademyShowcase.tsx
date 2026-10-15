@@ -14,7 +14,7 @@ const sessions = [
 export default function AcademyShowcase() {
   return (
     <section className="border-y border-border bg-surface">
-      <div className="mx-auto max-w-3xl px-6 py-24 text-center">
+      <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24 text-center">
         <Reveal>
           <p className="font-mono text-sm font-semibold tracking-widest text-accent">
             AI FOCUSED ACADEMY

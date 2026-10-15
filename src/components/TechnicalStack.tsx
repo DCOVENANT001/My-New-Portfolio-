@@ -40,7 +40,7 @@ const groups = [
 
 export default function TechnicalStack() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-24 text-center">
+    <section className="mx-auto max-w-4xl px-6 py-16 sm:py-24 text-center">
       <Reveal>
         <p className="font-mono text-sm font-semibold tracking-widest text-accent">
           BEYOND AUTOMATION

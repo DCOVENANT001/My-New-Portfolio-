@@ -5,7 +5,7 @@ import { proofGrid } from "@/data/proofGrid";
 
 export default function ProofGrid() {
   return (
-    <section id="proof" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="proof" className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
       <Reveal className="text-center">
         <p className="font-mono text-sm font-semibold tracking-widest text-accent">
           MORE PROOF

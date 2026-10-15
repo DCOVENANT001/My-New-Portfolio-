@@ -4,7 +4,7 @@ import LoomEmbed from "./LoomEmbed";
 export default function FlagshipSeven() {
   return (
     <section className="border-y border-border bg-surface">
-      <div className="mx-auto max-w-3xl px-6 py-24 text-center">
+      <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24 text-center">
         <Reveal>
           <p className="font-mono text-sm font-semibold tracking-widest text-accent">
             UK REAL ESTATE
@@ -18,7 +18,7 @@ export default function FlagshipSeven() {
           </p>
         </Reveal>
 
-        <Reveal delay={150} className="mt-16">
+        <Reveal delay={150} className="mt-12 sm:mt-16">
           <p className="font-mono text-sm font-semibold tracking-widest text-accent">
             HOW A LEAD MOVES THROUGH IT
           </p>

@@ -99,15 +99,23 @@ h3 {
   }
 }
 
-.marquee-track {
+@utility marquee-track {
   animation: marquee 14s linear infinite;
 }
 
-.marquee-pausable:hover .marquee-track {
+.marquee-pausable:hover .marquee-track,
+.marquee-pausable:hover .sm\:marquee-track {
   animation-play-state: paused;
 }
 
-.marquee-fade {
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility marquee-fade {
   -webkit-mask-image: linear-gradient(
     to right,
     transparent,
@@ -281,6 +289,7 @@ h3 {
   .float,
   .sway,
   .marquee-track,
+  .sm\:marquee-track,
   .blob,
   .text-gradient,
   .pulse-dot,

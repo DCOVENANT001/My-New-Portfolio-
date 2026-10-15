@@ -2,6 +2,7 @@ import Image from "next/image";
 import WaveBackdrop from "./WaveBackdrop";
 import GradientBlobs from "./GradientBlobs";
 import BookCallButton from "./BookCallButton";
+import BrandLogo from "./BrandLogo";
 
 export default function Hero() {
   return (
@@ -11,7 +12,7 @@ export default function Hero() {
         <WaveBackdrop />
       </div>
 
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 pb-24 pt-40 lg:flex-row lg:items-center lg:gap-4">
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-6 pb-16 pt-32 sm:gap-12 sm:pb-24 sm:pt-40 lg:flex-row lg:items-center lg:gap-4">
         <div className="flex-1 text-center lg:text-left">
           <p
             className="reveal in-view font-mono text-sm font-semibold tracking-widest text-accent"
@@ -59,18 +60,19 @@ export default function Hero() {
               alt="Covenant Ademola"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 400px"
+              sizes="(max-width: 640px) 320px, (max-width: 1024px) 384px, 400px"
               className="object-cover"
             />
           </div>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-            {["n8n", "ZAP", "GHL", "AI"].map((label) => (
-              <span
-                key={label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-navy/10 bg-white font-mono text-[10px] font-semibold tracking-tight text-navy shadow-sm"
-              >
-                {label}
-              </span>
+            {[
+              { name: "n8n", label: "n8n" },
+              { name: "zapier", label: "Zapier" },
+              { name: "make", label: "Make" },
+              { name: "gohighlevel", label: "GoHighLevel" },
+              { name: "openai", label: "OpenAI" },
+            ].map((tool) => (
+              <BrandLogo key={tool.name} name={tool.name} label={tool.label} />
             ))}
           </div>
         </div>

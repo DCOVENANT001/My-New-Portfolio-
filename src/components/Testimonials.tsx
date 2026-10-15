@@ -17,9 +17,9 @@ const quotes = [
 
 export default function Testimonials() {
   return (
-    <section className="mx-auto max-w-4xl px-6 py-24">
+    <section className="mx-auto max-w-4xl px-6 py-16 sm:py-24">
       <Reveal>
-        <p className="font-mono text-sm tracking-wide text-accent">
+        <p className="font-mono text-sm font-semibold tracking-widest text-accent">
           IN THEIR WORDS
         </p>
       </Reveal>

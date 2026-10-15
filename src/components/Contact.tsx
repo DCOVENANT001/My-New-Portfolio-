@@ -50,21 +50,21 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="mx-auto max-w-3xl px-6 py-24">
+    <section id="contact" className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       <Reveal>
         <p className="font-mono text-xs tracking-widest text-muted">
           DIRECT
         </p>
-        <div className="mt-3 flex flex-wrap items-baseline gap-4">
+        <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-2">
           <a
             href={`mailto:${EMAIL}`}
-            className="font-serif text-3xl text-navy underline decoration-navy/30 underline-offset-4 hover:decoration-accent sm:text-4xl"
+            className="break-all font-serif text-[clamp(1rem,5.6vw,1.25rem)] text-navy underline decoration-navy/30 underline-offset-4 hover:decoration-accent sm:text-3xl md:text-4xl"
           >
             {EMAIL}
           </a>
           <button
             onClick={handleCopy}
-            className="font-mono text-xs tracking-wide text-accent hover:opacity-70"
+            className="-my-2 px-2 py-2 font-mono text-xs tracking-wide text-accent hover:opacity-70"
           >
             {copied ? "COPIED" : "COPY"}
           </button>

@@ -5,11 +5,14 @@ import { useEffect, useRef, useState } from "react";
 export default function CountUp({
   value,
   className = "",
+  animate = true,
 }: {
   value: string;
   className?: string;
+  /** Set false for values like years, where counting up from 0 reads wrong. */
+  animate?: boolean;
 }) {
-  const match = value.match(/^(\D*)([\d,]+)(\D*)$/);
+  const match = animate ? value.match(/^(\D*)([\d,]+)(\D*)$/) : null;
   const ref = useRef<HTMLSpanElement>(null);
   // Render the real value in the server HTML so crawlers and screen readers
   // see it; the count-up from 0 only starts once the stat scrolls into view.

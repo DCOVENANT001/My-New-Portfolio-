@@ -75,7 +75,7 @@ export default function FlagshipTempho() {
   const [receiptsLightbox, setReceiptsLightbox] = useState<number | null>(null);
 
   return (
-    <section id="work" className="mx-auto max-w-6xl px-6 py-24">
+    <section id="work" className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
       <Reveal className="text-center">
         <p className="font-mono text-sm font-semibold tracking-widest text-accent">
           FLAGSHIP — TEMPHO LUXE, CANADA
@@ -104,7 +104,7 @@ export default function FlagshipTempho() {
         ))}
       </Reveal>
 
-      <Reveal delay={150} className="mt-16">
+      <Reveal delay={150} className="mt-12 sm:mt-16">
         <p className="text-center font-mono text-sm font-semibold tracking-widest text-accent">
           THE PRODUCT
         </p>
@@ -115,7 +115,7 @@ export default function FlagshipTempho() {
         <ShotGrid shots={product} onOpen={setProductLightbox} />
       </Reveal>
 
-      <Reveal delay={200} className="mt-16">
+      <Reveal delay={200} className="mt-12 sm:mt-16">
         <p className="text-center font-mono text-sm font-semibold tracking-widest text-accent">
           WATCH IT WORK
         </p>
@@ -143,7 +143,7 @@ export default function FlagshipTempho() {
         </div>
       </Reveal>
 
-      <Reveal delay={250} className="mt-16">
+      <Reveal delay={250} className="mt-12 sm:mt-16">
         <p className="text-center font-mono text-sm font-semibold tracking-widest text-accent">
           THE RECEIPTS
         </p>
@@ -155,7 +155,7 @@ export default function FlagshipTempho() {
         <ShotGrid shots={receipts} onOpen={setReceiptsLightbox} />
       </Reveal>
 
-      <Reveal delay={300} className="mt-14 text-center">
+      <Reveal delay={300} className="mt-12 text-center sm:mt-14">
         <p className="text-muted">
           Scraped daily. Cleaned automatically. Routed straight into the
           CRM.

@@ -15,15 +15,19 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    let wasScrolled = false;
+    const onScroll = () => {
+      const next = window.scrollY > 40;
+      if (next === wasScrolled) return;
+      wasScrolled = next;
+      setScrolled(next);
+      // Crossing the threshold in either direction closes the mobile menu.
+      setMenuOpen(false);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [scrolled]);
 
   return (
     <header
