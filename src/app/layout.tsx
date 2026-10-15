@@ -19,7 +19,14 @@ const fraunces = Fraunces({
   style: ["normal", "italic"],
 });
 
-const SITE_URL = "https://covenantademola.com";
+// The public address of the site. Set NEXT_PUBLIC_SITE_URL once a custom
+// domain exists; until then Vercel supplies its production domain
+// (the shortest custom domain, or the vercel.app one if none is attached).
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
