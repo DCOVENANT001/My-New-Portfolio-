@@ -11,7 +11,7 @@ import CountUp from "./CountUp";
 const stats = [
   { value: "18", label: "real sites the AI learned from" },
   { value: "95", label: "point scoring scale, strong leads only" },
-  { value: "8", label: "tools running as one system" },
+  { value: "7", label: "Make scenarios running as one system" },
   { value: "0", label: "hours of manual research" },
 ];
 
@@ -46,9 +46,15 @@ const steps = [
   },
 ];
 
-// Workflow screenshots. Drop files into public/images/agency-audit/ and list
-// them here; the grid and lightbox appear automatically once this has entries.
-const shots: { src: string; caption: string }[] = [];
+const shots: { src: string; caption: string }[] = [
+  { src: "/images/agency-audit/01-source-and-filter.png", caption: "01 Source & filter — Google Maps by city and trade, with closed, oversized and off-trade businesses dropped" },
+  { src: "/images/agency-audit/02-audit.png", caption: "02 Audit — screenshots and a speed test, then Claude judges the design and finds the owner" },
+  { src: "/images/agency-audit/03-enrich-and-score.png", caption: "03 Enrich & score — verified email lookup, then a score out of 95" },
+  { src: "/images/agency-audit/04-deliver-to-ghl.png", caption: "04 Deliver — contact, audit note and pipeline deal created in GoHighLevel, never twice" },
+  { src: "/images/agency-audit/05-housekeeping.png", caption: "05 Housekeeping — weekly cleanup of old records and retries for failed audits" },
+  { src: "/images/agency-audit/06-daily-health-check.png", caption: "06 Daily health check — sourced, delivered and parked counts logged in the CRM" },
+  { src: "/images/agency-audit/07-watchdog.png", caption: "07 Watchdog — hourly credit checks on every paid service; pauses, emails the client, resumes when topped up" },
+];
 
 const tools = [
   { name: "make", label: "Make" },
@@ -148,7 +154,8 @@ export default function FlagshipAgency() {
               THE WORKFLOWS
             </p>
             <p className="mx-auto mt-3 max-w-lg text-center text-muted">
-              The actual scenarios behind it. Click a shot to look closer.
+              The seven Make scenarios behind it, including the ones that keep
+              it healthy. Click a shot to look closer.
             </p>
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
               {shots.map((shot, i) => (

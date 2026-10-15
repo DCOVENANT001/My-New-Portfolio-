@@ -21,6 +21,12 @@ export const workflowsByPlatform: { platform: string; shots: WorkflowShot[] }[] 
   {
     platform: "Make",
     shots: [
+      { src: "/images/agency-audit/01-source-and-filter.png", caption: "Lead gen: finds businesses on Google Maps and filters out the wrong ones" },
+      { src: "/images/agency-audit/02-audit.png", caption: "Lead gen: screenshots, speed test and an AI verdict on the website" },
+      { src: "/images/agency-audit/03-enrich-and-score.png", caption: "Lead gen: verified email lookup and a score out of 95" },
+      { src: "/images/agency-audit/04-deliver-to-ghl.png", caption: "Lead gen: scored leads delivered into GoHighLevel with an audit note" },
+      { src: "/images/agency-audit/07-watchdog.png", caption: "Lead gen: the watchdog that pauses, alerts and resumes when a tool runs out of credit" },
+      { src: "/images/agency-audit/06-daily-health-check.png", caption: "Lead gen: the daily health check logged into the CRM" },
       { src: "/images/workflows/make/01-scraping-pipeline.png", caption: "The daily pipeline that finds new landlords" },
       { src: "/images/workflows/make/02-execution-log-1.png", caption: "A real run: 646 steps completed in 17 seconds" },
       { src: "/images/workflows/make/03-execution-log-2.png", caption: "A later run: 1,552 steps completed in 41 seconds" },
