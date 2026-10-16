@@ -72,12 +72,13 @@ export default function FlagshipAgency() {
             FLAGSHIP — US WEB DESIGN AGENCY, 2026
           </p>
           <h2 className="mt-4 font-serif text-4xl font-bold text-navy sm:text-6xl">
-            Every sales call starts with the answer.
+            Qualified leads, delivered daily. Nobody lifts a finger.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-muted">
-            The agency sells website redesigns to interior designers and
-            landscapers. Finding the right prospects took hours of manual
-            work every day. Now a system does it before the team logs in.
+            A lead generation system I built for a US web design agency.
+            It finds the businesses, audits their websites, finds the owner
+            and hands the sales team scored leads with the pitch already
+            written. Every day, before anyone logs in.
           </p>
         </Reveal>
 
@@ -129,7 +130,9 @@ export default function FlagshipAgency() {
             WATCH IT WORK
           </p>
           <p className="mx-auto mt-3 max-w-lg text-center text-muted">
-            A walkthrough of the live system, start to finish.
+            The system running for real: a business found on Google Maps,
+            its website audited, the owner identified, and a ready-to-call
+            lead landing in the CRM.
           </p>
           <div className="mx-auto mt-8 max-w-3xl">
             <LoomEmbed
@@ -137,7 +140,7 @@ export default function FlagshipAgency() {
               title="AI lead generation and website audit system walkthrough"
             />
             <p className="mt-2 text-center text-sm text-muted">
-              From Google Maps search to a scored, annotated lead in the CRM
+              One real lead, start to finish, with no one touching it
             </p>
           </div>
         </Reveal>
