@@ -1,11 +1,7 @@
-"use client";
-
-import { useState } from "react";
-import Image from "next/image";
 import Reveal from "./Reveal";
 import BrandLogo from "./BrandLogo";
 import LoomEmbed from "./LoomEmbed";
-import Lightbox from "./Lightbox";
+import ShotMarquee from "./ShotMarquee";
 import CountUp from "./CountUp";
 
 const stats = [
@@ -47,13 +43,13 @@ const steps = [
 ];
 
 const shots: { src: string; caption: string }[] = [
-  { src: "/images/agency-audit/01-source-and-filter.png", caption: "01 Source & filter — Google Maps by city and trade, with closed, oversized and off-trade businesses dropped" },
-  { src: "/images/agency-audit/02-audit.png", caption: "02 Audit — screenshots and a speed test, then Claude judges the design and finds the owner" },
+  { src: "/images/agency-audit/01-source-and-filter.png", caption: "01 Source & filter — Google Maps by city and trade, wrong businesses dropped" },
+  { src: "/images/agency-audit/02-audit.png", caption: "02 Audit — screenshots, speed test, then Claude judges the site and finds the owner" },
   { src: "/images/agency-audit/03-enrich-and-score.png", caption: "03 Enrich & score — verified email lookup, then a score out of 95" },
-  { src: "/images/agency-audit/04-deliver-to-ghl.png", caption: "04 Deliver — contact, audit note and pipeline deal created in GoHighLevel, never twice" },
-  { src: "/images/agency-audit/05-housekeeping.png", caption: "05 Housekeeping — weekly cleanup of old records and retries for failed audits" },
+  { src: "/images/agency-audit/04-deliver-to-ghl.png", caption: "04 Deliver — contact, audit note and pipeline deal in GoHighLevel, never twice" },
+  { src: "/images/agency-audit/05-housekeeping.png", caption: "05 Housekeeping — weekly cleanup and retries for failed audits" },
   { src: "/images/agency-audit/06-daily-health-check.png", caption: "06 Daily health check — sourced, delivered and parked counts logged in the CRM" },
-  { src: "/images/agency-audit/07-watchdog.png", caption: "07 Watchdog — hourly credit checks on every paid service; pauses, emails the client, resumes when topped up" },
+  { src: "/images/agency-audit/07-watchdog.png", caption: "07 Watchdog — pauses any tool that runs out of credit, emails the client, resumes when paid" },
 ];
 
 const tools = [
@@ -68,8 +64,6 @@ const tools = [
 ];
 
 export default function FlagshipAgency() {
-  const [lightbox, setLightbox] = useState<number | null>(null);
-
   return (
     <section className="border-t border-border">
       <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
@@ -148,41 +142,18 @@ export default function FlagshipAgency() {
           </div>
         </Reveal>
 
-        {shots.length > 0 && (
-          <Reveal delay={250} className="mt-12 sm:mt-16">
-            <p className="text-center font-mono text-sm font-semibold tracking-widest text-accent">
-              THE WORKFLOWS
-            </p>
-            <p className="mx-auto mt-3 max-w-lg text-center text-muted">
-              The seven Make scenarios behind it, including the ones that keep
-              it healthy. Click a shot to look closer.
-            </p>
-            <div className="mt-8 grid gap-6 sm:grid-cols-3">
-              {shots.map((shot, i) => (
-                <button
-                  key={shot.src}
-                  onClick={() => setLightbox(i)}
-                  className="card-hover text-left"
-                >
-                  <figure>
-                    <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-border">
-                      <Image
-                        src={shot.src}
-                        alt={shot.caption}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover object-top"
-                      />
-                    </div>
-                    <figcaption className="mt-2 text-center text-sm text-muted">
-                      {shot.caption}
-                    </figcaption>
-                  </figure>
-                </button>
-              ))}
-            </div>
-          </Reveal>
-        )}
+        <Reveal delay={250} className="mt-12 sm:mt-16">
+          <p className="text-center font-mono text-sm font-semibold tracking-widest text-accent">
+            THE WORKFLOWS
+          </p>
+          <p className="mx-auto mt-3 max-w-lg text-center text-muted">
+            The seven Make scenarios behind it, including the ones that keep
+            it healthy. Click any shot to look closer.
+          </p>
+          <div className="mt-8">
+            <ShotMarquee shots={shots} />
+          </div>
+        </Reveal>
 
         <Reveal delay={300} className="mt-12 text-center sm:mt-14">
           <p className="mx-auto max-w-xl text-muted">
@@ -198,14 +169,6 @@ export default function FlagshipAgency() {
         </Reveal>
       </div>
 
-      {lightbox !== null && (
-        <Lightbox
-          shots={shots}
-          index={lightbox}
-          onClose={() => setLightbox(null)}
-          onIndexChange={setLightbox}
-        />
-      )}
     </section>
   );
 }
