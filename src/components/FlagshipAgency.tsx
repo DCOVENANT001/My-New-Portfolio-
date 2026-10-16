@@ -2,44 +2,15 @@ import Reveal from "./Reveal";
 import BrandLogo from "./BrandLogo";
 import LoomEmbed from "./LoomEmbed";
 import ShotMarquee from "./ShotMarquee";
-import CountUp from "./CountUp";
 
-const stats = [
-  { value: "18", label: "real sites the AI learned from" },
-  { value: "95", label: "point scoring scale, strong leads only" },
-  { value: "7", label: "Make scenarios running as one system" },
-  { value: "0", label: "hours of manual research" },
-];
 
 const steps = [
-  {
-    title: "Finds businesses",
-    detail:
-      "Searches Google Maps by city and trade, then drops anything closed, too big, or in the wrong line of work.",
-  },
-  {
-    title: "Checks the website",
-    detail:
-      "Desktop and mobile screenshots, a mobile speed test, and an AI verdict on premium vs outdated — trained on the agency's own calls on 18 real sites, so it judges the way they do.",
-  },
-  {
-    title: "Finds the owner",
-    detail: "Identifies the owner by name and finds a verified email address.",
-  },
-  {
-    title: "Scores the lead",
-    detail: "Every lead is scored out of 95. Only the strong ones go through.",
-  },
-  {
-    title: "Lands in the CRM",
-    detail:
-      "Arrives in GoHighLevel with a written note on exactly what's wrong with the site, tagged with the right offer, in the matching pipeline.",
-  },
-  {
-    title: "Watches itself",
-    detail:
-      "If a paid tool runs out of credit, that step pauses, the client gets an email saying what to top up, and it switches back on by itself once paid.",
-  },
+  "Finds businesses",
+  "Checks the website",
+  "Finds the owner",
+  "Scores the lead",
+  "Lands in the CRM",
+  "Watches itself",
 ];
 
 const shots: { src: string; caption: string }[] = [
@@ -82,44 +53,28 @@ export default function FlagshipAgency() {
           </p>
         </Reveal>
 
-        <Reveal delay={100} className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="card-hover rounded-xl border border-border bg-surface p-5 text-center"
-            >
-              <p className="flex items-center justify-center gap-2 font-serif text-3xl font-bold text-navy">
-                <span className="live-dot h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden />
-                <CountUp value={stat.value} />
-              </p>
-              <p className="mt-1 font-mono text-xs text-muted">{stat.label}</p>
-            </div>
-          ))}
-        </Reveal>
 
-        <Reveal delay={150} className="mt-12 sm:mt-16">
+        <Reveal delay={100} className="mt-10 sm:mt-12">
           <p className="text-center font-mono text-sm font-semibold tracking-widest text-accent">
             HOW IT WORKS, EVERY DAY
           </p>
           <p className="mx-auto mt-3 max-w-lg text-center text-muted">
-            Six stages, no human in the loop. Each one hands a cleaner lead
-            to the next.
+            Six stages, no human in the loop.
           </p>
-          <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ol className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-3 sm:gap-x-3">
             {steps.map((step, i) => (
-              <li
-                key={step.title}
-                className="card-hover flex gap-4 rounded-xl border border-border bg-surface p-5"
-              >
-                <span className="font-mono text-sm font-semibold text-accent">
-                  {String(i + 1).padStart(2, "0")}
+              <li key={step} className="flex items-center gap-2 sm:gap-3">
+                <span className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface px-4 py-2 shadow-sm">
+                  <span className="font-mono text-xs font-semibold text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-sm font-medium text-navy">{step}</span>
                 </span>
-                <div>
-                  <h3 className="font-serif text-xl font-semibold text-navy">
-                    {step.title}
-                  </h3>
-                  <p className="mt-1.5 text-sm text-muted">{step.detail}</p>
-                </div>
+                {i < steps.length - 1 && (
+                  <span aria-hidden className="hidden text-border sm:inline">
+                    →
+                  </span>
+                )}
               </li>
             ))}
           </ol>
