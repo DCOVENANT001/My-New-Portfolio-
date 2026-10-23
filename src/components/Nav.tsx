@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import BookCallButton from "./BookCallButton";
 
 const links = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#proof", label: "Proof" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
+  { href: "/#proof", label: "Proof" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -40,10 +42,10 @@ export default function Nav() {
           scrolled ? "py-2.5" : "py-4"
         }`}
       >
-        <a href="#top" className="font-serif text-lg font-semibold text-navy">
+        <Link href="/" className="font-serif text-lg font-semibold text-navy">
           <span className="sm:hidden">CA</span>
           <span className="hidden sm:inline">Covenant Ademola</span>
-        </a>
+        </Link>
         <ul className="hidden gap-8 font-mono text-sm text-muted sm:flex">
           {links.map((link) => (
             <li key={link.href}>

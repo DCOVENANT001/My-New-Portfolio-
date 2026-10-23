@@ -14,6 +14,7 @@ import WorkflowShowcase from "@/components/WorkflowShowcase";
 import ProofGrid from "@/components/ProofGrid";
 import AcademyShowcase from "@/components/AcademyShowcase";
 import Testimonials from "@/components/Testimonials";
+import Faq from "@/components/Faq";
 import ClosingCta from "@/components/ClosingCta";
 import Contact from "@/components/Contact";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -43,6 +44,7 @@ export default async function Home() {
         <ProofGrid />
         <AcademyShowcase />
         <Testimonials />
+        <Faq />
         <ClosingCta />
         <Contact />
       </main>

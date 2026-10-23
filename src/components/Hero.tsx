@@ -34,6 +34,16 @@ export default function Hero() {
           >
             Real clients. Real systems. Still running.
           </p>
+          <p
+            className="reveal in-view mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg lg:mx-0"
+            style={{ animationDelay: "200ms" }}
+          >
+            I&rsquo;m Covenant Ademola, an AI automation engineer. I build AI
+            lead generation systems, voice and chat agents, and CRM
+            automations for real estate, web design agencies, legal,
+            e-commerce and coaching businesses in Canada, the US, the UK and
+            Ireland.
+          </p>
           <div
             className="reveal in-view mt-9 flex flex-wrap items-center justify-center gap-4 lg:justify-start"
             style={{ animationDelay: "240ms" }}

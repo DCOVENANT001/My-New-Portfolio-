@@ -6,7 +6,11 @@
 
 Covenant Ademola (also written Ademola Covenant) is an AI automation and
 systems specialist based in Nigeria, working remotely with clients across
-Canada, Ireland, and the UK.
+Canada, the United States, Ireland, and the UK. Covenant builds AI lead generation
+systems, AI voice and chat agents, CRM automations and workflow automations
+for real estate companies, web design agencies, law practices, e-commerce
+stores and coaching businesses, using n8n, Make, Zapier, GoHighLevel, Claude
+and OpenAI.
 
 ## Summary
 
@@ -27,6 +31,19 @@ Canada, Ireland, and the UK.
 - Works primarily with n8n, Zapier, Make, GoHighLevel, Apify, and LLM APIs
   (OpenAI, Anthropic Claude, Google Gemini), and builds full-stack products
   using AI-assisted development tools such as Claude Code.
+
+## Case studies
+
+- /work/tempho-luxe — AI voice agent, CRM and website for a Canadian real
+  estate company (Tempho Luxe). 1,820+ opportunities managed, 3,360 landlords
+  reached, 53 listings converted.
+- /work/ai-lead-generation-agency — AI lead generation and website audit
+  system for a US web design agency. Seven Make scenarios find businesses,
+  audit their websites with Claude, score each lead and deliver it to
+  GoHighLevel daily with the pitch written.
+- /work/uk-real-estate-ai-agent — one AI agent that replaced the work of
+  seven people at a UK real estate firm: every landlord reply handled, leads
+  qualified in under 60 seconds, automatic day-by-day follow-up.
 
 ## Contact
 

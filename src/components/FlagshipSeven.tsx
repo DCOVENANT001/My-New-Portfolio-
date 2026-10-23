@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
 import LoomEmbed from "./LoomEmbed";
 
@@ -35,6 +36,15 @@ export default function FlagshipSeven() {
         <Reveal delay={200} className="mt-8">
           <LoomEmbed id="9a49064c7e2a4da8895a62540ffad69a" title="Lead nurture sequence explained" />
           <p className="mt-2 text-sm text-muted">Step 2 — the automatic day-by-day follow-up sequence, explained</p>
+        </Reveal>
+
+        <Reveal delay={350} className="mt-8 text-center">
+          <Link
+            href="/work/uk-real-estate-ai-agent"
+            className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent"
+          >
+            Read the full case study <span aria-hidden>→</span>
+          </Link>
         </Reveal>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./Reveal";
 import BrandLogo from "./BrandLogo";
 import LoomEmbed from "./LoomEmbed";
@@ -165,6 +166,15 @@ export default function FlagshipTempho() {
             <BrandLogo key={tool.name} name={tool.name} label={tool.label} />
           ))}
         </div>
+      </Reveal>
+
+      <Reveal delay={350} className="mt-8 text-center">
+        <Link
+          href="/work/tempho-luxe"
+          className="inline-flex items-center gap-2 font-mono text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4 hover:decoration-accent"
+        >
+          Read the full case study <span aria-hidden>→</span>
+        </Link>
       </Reveal>
 
       {productLightbox !== null && (
