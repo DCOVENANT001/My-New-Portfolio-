@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@lobehub/icons-static-svg": "^1.94.0",
+    "@vercel/analytics": "^2.0.1",
     "country-flag-icons": "^1.6.20",
     "next": "16.3.0",
     "react": "19.2.8",

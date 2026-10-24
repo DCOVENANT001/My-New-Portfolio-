@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fraunces } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import CalEmbed from "@/components/CalEmbed";
 import {
   CLIENT_COUNTRIES,
@@ -119,6 +120,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <CalEmbed />
         {children}
+        <Analytics />
       </body>
     </html>
   );
