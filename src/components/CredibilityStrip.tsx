@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 import CountUp from "./CountUp";
 
 const stats: { value: string; label: string; animate?: boolean }[] = [
-  { value: "300+", label: "professionals coached" },
+  { value: "1200+", label: "professionals coached" },
   { value: "1,820+", label: "leads managed in one system" },
   { value: "< 60s", label: "AI lead response time" },
   { value: "2+", label: "years building for real clients" },

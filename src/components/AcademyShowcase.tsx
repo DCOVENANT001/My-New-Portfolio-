@@ -20,7 +20,7 @@ export default function AcademyShowcase() {
             AI FOCUSED ACADEMY
           </p>
           <h2 className="mt-4 font-serif text-4xl font-bold text-navy sm:text-5xl">
-            300+ professionals, coached live.
+            1200+ professionals, coached live.
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-lg text-muted">
             Lawyers, cybersecurity experts, HR managers, data analysts —

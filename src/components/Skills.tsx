@@ -31,7 +31,7 @@ const items = [
   {
     icon: IconCoach,
     name: "Coaching",
-    detail: "300+ professionals, taught hands-on, not in theory.",
+    detail: "1200+ professionals, taught hands-on, not in theory.",
   },
 ];
 

@@ -19,7 +19,7 @@ export default function About() {
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-lg text-muted">
           I architect the system. AI helps me build it, fast. I also coach
-          300+ professionals to do the same.
+          1200+ professionals to do the same.
         </p>
       </Reveal>
 
