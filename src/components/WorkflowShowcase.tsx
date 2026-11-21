@@ -1,16 +1,50 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
 import ShotMarquee from "./ShotMarquee";
 import { workflowsByPlatform } from "@/data/workflowProof";
+
+// "GHL" -> "ghl", "n8n" -> "n8n", etc.
+const slugs = workflowsByPlatform.map((g) => g.platform.toLowerCase());
+
+function indexFromHash(hash: string): number {
+  const match = hash.replace(/^#/, "").match(/^workflows-(.+)$/);
+  return match ? slugs.indexOf(match[1]) : -1; // -1 = not a workflow link
+}
 
 export default function WorkflowShowcase() {
   const [active, setActive] = useState(0);
   const current = workflowsByPlatform[active];
 
+  useEffect(() => {
+    const syncFromHash = () => {
+      const i = indexFromHash(window.location.hash);
+      if (i === -1) return;
+      setActive(i);
+      // Nothing on the page has id="workflows-make", so the browser won't
+      // scroll by itself. Scroll to the section ourselves.
+      requestAnimationFrame(() => {
+        document.getElementById("workflows")?.scrollIntoView();
+      });
+    };
+
+    syncFromHash(); // on load
+    window.addEventListener("hashchange", syncFromHash); // on hash change
+    return () => window.removeEventListener("hashchange", syncFromHash);
+  }, []);
+
+  const selectTab = (i: number) => {
+    setActive(i);
+    // Updates the address bar without scrolling or firing hashchange.
+    history.replaceState(null, "", `#workflows-${slugs[i]}`);
+  };
+
   return (
-    <section className="border-y border-border bg-surface">
+    <section
+      id="workflows"
+      className="scroll-mt-24 border-y border-border bg-surface"
+    >
       <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
         <Reveal className="text-center">
           <p className="font-mono text-sm font-semibold tracking-widest text-accent">
@@ -29,7 +63,7 @@ export default function WorkflowShowcase() {
           {workflowsByPlatform.map((group, i) => (
             <button
               key={group.platform}
-              onClick={() => setActive(i)}
+              onClick={() => selectTab(i)}
               className={`rounded-full px-5 py-2.5 font-mono text-sm font-semibold transition-colors ${
                 i === active
                   ? "bg-navy text-white"
